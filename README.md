@@ -7,35 +7,49 @@ This project focused on the enterprise-wide deprecation of NTLM authentication a
 # Project Objective
 The primary objectives of this project were -
 
-To identify and assess NTLM authentication usage across the enterprise,
-To eliminate NTLM authentication using centralized Group Policy enforcement,
-To transition all supported systems to Kerberos or modern authentication mechanisms,
-To reduce credential-based attack surface and improve overall security posture,
-To ensure minimal impact to business-critical applications and users,
+To identify and assess NTLM authentication usage across the enterprise
+
+To eliminate NTLM authentication using centralized Group Policy enforcement
+
+To transition all supported systems to Kerberos or modern authentication mechanisms
+
+To reduce credential-based attack surface and improve overall security posture
+
+To ensure minimal impact to business-critical applications and users
 
 # The Scope Of This Project
 
-Active Directory domain-joined user accounts and systems,
-Domain Controllers and authentication infrastructure,
-Group Policy Objects (GPOs) related to NTLM and authentication behavior,
-Pilot user groups representing multiple business units,
-Enterprise-wide rollout following successful pilot validation,
-Systems or applications that were not domain-joined or were externally managed were reviewed on a case-by-case basis and addressed through exception handling where required.
+Active Directory domain-joined user accounts and systems
+
+Domain Controllers and authentication infrastructure
+
+Group Policy Objects (GPOs) related to NTLM and authentication behavior
+
+Pilot user groups representing multiple business units
+
+Enterprise-wide rollout following successful pilot validation
+
+Systems or applications that were not domain-joined or were externally managed were reviewed on a case-by-case basis and addressed through exception handling where required
 
 # Challanges
 
-Lack of historical data on NTLM-dependent applications,
-Presence of legacy systems with undocumented authentication behavior,
-High risk of business disruption if NTLM was disabled without proper assessment,
-Requirement for a rollback strategy in case of authentication failures,
-Need for coordination with multiple application owners and stakeholders.
+Lack of historical data on NTLM-dependent applications
 
-5. Methodology and Implementation
-5.1 NTLM Usage Assessment and Auditing
+Presence of legacy systems with undocumented authentication behavior
+
+High risk of business disruption if NTLM was disabled without proper assessment
+
+Requirement for a rollback strategy in case of authentication failures
+
+Need for coordination with multiple application owners and stakeholders
+
+# Steps Followed For The Implementation
+
+1 NTLM Usage Assessment and Auditing
 
 To gain visibility into NTLM usage, NTLM auditing was enabled using Group Policy across domain controllers. Security event logs were analyzed to identify authentication attempts using NTLM, including the source systems, user accounts, and applications involved.
 
-This phase provided critical insight into:
+This phase provided critical insight into -
 
 Active NTLM authentication flows
 
@@ -43,11 +57,11 @@ Legacy systems and applications relying on NTLM
 
 Potential high-risk authentication patterns
 
-5.2 Pilot Deployment
+2 Pilot Deployment
 
 A pilot group was established to validate the impact of NTLM restriction policies. Users were selected from multiple departments to ensure representative coverage of business workflows and application usage.
 
-During the pilot phase:
+During the pilot phase -
 
 NTLM restriction policies were applied via Group Policy
 
@@ -57,8 +71,8 @@ Authentication failures and user experience issues were closely monitored
 
 Identified NTLM dependencies were documented and escalated for remediation
 
-5.3 Issue Identification and Remediation
-
+# Key Challenge & Solution 
+# Challange -
 Any NTLM-dependent applications or services identified during the pilot phase were addressed using the following approaches:
 
 Reconfiguration to support Kerberos authentication
@@ -71,29 +85,13 @@ Exception-based controls applied only where business-critical and unavoidable
 
 All exceptions were documented with risk justification and reviewed with relevant stakeholders.
 
-5.4 Enterprise-Wide Enforcement
+# Solutions
 
 Following successful pilot validation and remediation, NTLM blocking policies were rolled out in a phased manner across the organization. Continuous monitoring was conducted to ensure authentication stability and to quickly identify any residual NTLM usage.
 
 Rollback mechanisms were maintained throughout the deployment to ensure rapid recovery if required.
 
-6. Security Controls and Hardening Measures
-
-The following security enhancements were implemented as part of this initiative:
-
-Restriction and eventual elimination of NTLM authentication via Group Policy
-
-Enforcement of Kerberos as the default authentication protocol
-
-Reduction of exposure to credential relay and pass-the-hash attacks
-
-Improved authentication visibility and logging
-
-Alignment with Microsoft security baseline and best practices
-
-7. Outcomes and Benefits
-
-The project achieved the following outcomes:
+# Outcomes & Benifits
 
 Successful elimination of NTLM authentication across the enterprise
 
