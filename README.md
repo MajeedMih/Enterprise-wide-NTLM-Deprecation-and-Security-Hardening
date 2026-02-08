@@ -45,7 +45,7 @@ Need for coordination with multiple application owners and stakeholders
 
 # Steps Followed For The Implementation
 
-1 NTLM Usage Assessment and Auditing
+1 - NTLM Usage Assessment and Auditing
 
 To gain visibility into NTLM usage, NTLM auditing was enabled using Group Policy across domain controllers. Security event logs were analyzed to identify authentication attempts using NTLM, including the source systems, user accounts, and applications involved.
 
@@ -57,7 +57,7 @@ Legacy systems and applications relying on NTLM
 
 Potential high-risk authentication patterns
 
-2 Pilot Deployment
+2 - Pilot Deployment
 
 A pilot group was established to validate the impact of NTLM restriction policies. Users were selected from multiple departments to ensure representative coverage of business workflows and application usage.
 
